@@ -16,10 +16,6 @@ use pocketmine\event\entity\EntityDamageByChildEntityEvent;
 
 class Main extends PluginBase implements Listener
 {
-    private $hg;
-public $players = array();
-public $pl = array();
-public $compass = array();
 
     public function onLoad(){
        @mkdir($this->getDataFolder());
