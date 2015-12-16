@@ -33,6 +33,7 @@ class Main extends PluginBase implements Listener
         $this->getServer()->getLogger()->info("[CTF]Plugin has been enabled!");
 		$this->redPlayers = []; //max amount is 5
 		$this->bluePlayers = [];
+		$this->kick = [];
 											  
 } 
 
@@ -48,6 +49,7 @@ public function addBluePlayer(Player $p){
 public function pickTeam(Player $p){
 if(count($this->redPlayers) === 5 && count($this->bluePlayers) === 5){
 	$p->sendMessage("All teams are full! Removing you from the server! in 2 seconds!");
+	array_push($this->kick,$p);
 	$task = new kickTask($this, $this);
 	$this->getServer()->getScheduler()->scheduleDelayedTask($task, 20*2);
 	return;
