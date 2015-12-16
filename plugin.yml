@@ -1,0 +1,4 @@
+main: CTF\Main
+version: 1.0DEV
+api: 1.13.0
+name: CTFPE
